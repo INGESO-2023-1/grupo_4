@@ -11,6 +11,7 @@
 
 <body>
 
+
   <nav class="navbar navbar-expand navbar-dark bg-dark p-3">
     <a href="#" class="navbar-brand">
       <img class="d-inline-block align-top" id="logo-header" src="https://w7.pngwing.com/pngs/673/236/png-transparent-telegram-app-logo-icon-application-symbol-message-messaging-app-technology-social-media.png"
@@ -31,6 +32,9 @@
     <h2 class="text-center my-4"> Bienvenido a JPA Chat, 
     <?php
     session_start();
+    if(!isset($_SESSION["usuario"])){
+      header("location: login.php");
+    }
     echo ($_SESSION["usuario"]);
     ?>
     </h2>
@@ -50,6 +54,24 @@
             <h5 class="card-title">Contactos</h5>
             <p class="card-text">Aquí puedes buscar y agregar contactos para empezar a hablar con ellos.</p>
             <a href="#" class="btn btn-primary">Ver contactos</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Perfil</h5>
+            <p class="card-text">Aquí puedes ver y modificar tu información de usuario.</p>
+            <a href="perfil.php" class="btn btn-primary">Ver perfil</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Cerrar Sesión</h5>
+            <p class="card-text">Aquí puedes cerrar sesión en este dispositivo.</p>
+            <a href="cerrar_sesion.php" class="btn btn-primary">Cerrar sesión</a>
           </div>
         </div>
       </div>

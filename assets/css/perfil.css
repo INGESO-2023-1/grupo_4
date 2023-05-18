@@ -1,0 +1,32 @@
+.profile {
+  float: left; /* Tirar la imagen hacia la izquierda */
+  max-width: 200px; /* Establecer el tamaño máximo de la imagen */
+  margin-right: 20px; /* Añadir un margen derecho para separarla del texto */
+}
+
+#container-main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#img-perfil {
+  width: 100%; /* Hacer que la imagen ocupe el ancho máximo del contenedor */
+  height: auto; /* Mantener la proporción de la imagen */
+}
+
+#container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+footer{
+  padding: 20px;
+  margin-top: 20px;
+  color: white;
+  background-color: #1293d4;
+  text-align: center;
+}

@@ -36,6 +36,7 @@
         <input type="email" name="email" class="form-control mt-2" placeholder="Correo electrónico" required autofocus>
         <input type="password" name="password" class="form-control mt-2" placeholder="Contraseña" required autofocus>
         <input type="password" name="confirmar_password" class="form-control mt-2" placeholder="Confirmar contraseña" required autofocus>
+        <input type="password" name="img" class="form-control mt-2" placeholder="Link foto de perfil" required autofocus>
         <a href="login.php" class="text-decoration-none link-light">
               <button type="button" class="btn btn-primary mt-3"> Volver </button>
             </a>

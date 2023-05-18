@@ -1,8 +1,7 @@
 <?php
 
 try {
-    $base = new PDO("mysql:host=localhost; dbname=proyecto_ingesoft", "root", "");
-    $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include_once "conexion_bd.php";
 
     // Obtenemos los valores del formulario
     $username = $_POST['username'];
@@ -10,6 +9,7 @@ try {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmar_password = $_POST['confirmar_password'];
+    $img = $_POST['img'];
 
     session_start();
     $_SESSION["usuario"] = $username;
@@ -21,12 +21,13 @@ try {
     }
 
     // Insertamos los datos en la base de datos
-    $query = "INSERT INTO usuarios (username, password, telefono, correo) VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO usuarios (username, password, telefono, correo, img) VALUES (?, ?, ?, ?, ?)";
     $stmt = $base->prepare($query);
     $stmt->bindParam(1, $username);
     $stmt->bindParam(2, $password);
     $stmt->bindParam(3, $telefono);
     $stmt->bindParam(4, $email);
+    $stmt->bindParam(5, $img);
     $stmt->execute();
 
     header("location: index.php");
