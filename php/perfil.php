@@ -116,6 +116,18 @@
       </div>
     </div>
 
+    <div class="col-sm-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Eliminar cuenta de manera permanente</h5>
+            <form action="delete_perfil.php" method="post">
+              <button type="submit" class="btn btn-primary"> Eliminar Cuenta </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
 <footer>
   Sitio Web Protegido JPA CHAT, Copyright © 2022
 </footer>

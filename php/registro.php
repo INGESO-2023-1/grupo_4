@@ -32,11 +32,11 @@
     <div class="text-center" id="registro-form">
       <form style="max-width: 400px; margin: auto;" action="procesar_registro.php" method="post">
         <input type="text" name="username" class="form-control mt-5" placeholder="Username" required autofocus>
-        <input type="tel" name="telefono" class="form-control mt-2" placeholder="Telefono" required autofocus>
+        <input type="number" name="telefono" class="form-control mt-2" placeholder="Teléfono" required autofocus>
         <input type="email" name="email" class="form-control mt-2" placeholder="Correo electrónico" required autofocus>
         <input type="password" name="password" class="form-control mt-2" placeholder="Contraseña" required autofocus>
         <input type="password" name="confirmar_password" class="form-control mt-2" placeholder="Confirmar contraseña" required autofocus>
-        <input type="password" name="img" class="form-control mt-2" placeholder="Link foto de perfil" required autofocus>
+        <input type="link" name="img" class="form-control mt-2" placeholder="Link foto de perfil" required autofocus>
         <a href="login.php" class="text-decoration-none link-light">
               <button type="button" class="btn btn-primary mt-3"> Volver </button>
             </a>
