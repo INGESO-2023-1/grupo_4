@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2023 a las 04:44:23
+-- Tiempo de generación: 13-06-2023 a las 04:40:40
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -32,23 +32,20 @@ CREATE TABLE `usuarios` (
   `username` varchar(25) NOT NULL,
   `password` varchar(10) NOT NULL,
   `telefono` int(11) NOT NULL,
-  `correo` varchar(64) NOT NULL
+  `correo` varchar(64) NOT NULL,
+  `img` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `username`, `password`, `telefono`, `correo`) VALUES
-(1, 'juan', '123', 45678, 'juan@usm.cl'),
-(2, 'Alonso', '1234', 1234567, 'alonso@usm.cl'),
-(3, 'pableke', '1234', 123456789, 'pablo@usm.cl'),
-(4, 'Jose', '321', 5691245, 'jose@usm.cl'),
-(5, 'Javier', '012', 34556, 'javi@gmail.com'),
-(6, 'Javier', '012', 34556, 'javi@gmail.com'),
-(7, 'Javier', '012', 34556, 'javi@gmail.com'),
-(8, 'Javier', '012', 34556, 'javi@gmail.com'),
-(9, 'Javier23', '012', 34556, 'javi@gmail.com');
+INSERT INTO `usuarios` (`id`, `username`, `password`, `telefono`, `correo`, `img`) VALUES
+(11, 'Soldier Boy', '123', 56773, 'sb2@gmail.com', 'https://www.superherohype.com/wp-content/uploads/sites/4/2023/04/soldier-boy-jensen-ackles.jpg'),
+(12, 'Itachi Uchiha', '321', 56773, 'itachi@usm.cl', 'https://w0.peakpx.com/wallpaper/805/458/HD-wallpaper-itachi-uchiha-naruto-art.jpg'),
+(14, 'Patrick Bateman', '321', 34556, 'patbateman@usm.cl', 'https://i.pinimg.com/736x/a8/ff/c7/a8ffc79deae8646e4b40025be3937694.jpg'),
+(15, 'Akira', 'akira', 5693457, 'akira@devilman.cl', 'https://i.pinimg.com/originals/11/3c/2b/113c2bd5ca3a0d29e6c639f2e1c6da02.jpg'),
+(16, 'Ryo', 'ryo', 666, 'ryo@usm.cl', 'https://www.cultture.com/pics/2022/02/devilman-crybaby-10-veces-que-se-insinuo-la-verdadera-identidad-de-ryo-0.webp');
 
 --
 -- Índices para tablas volcadas
@@ -58,7 +55,8 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `telefono`, `correo`) VALU
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -68,7 +66,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -13,14 +13,14 @@
 
 
   <nav class="navbar navbar-expand navbar-dark bg-dark p-3">
-    <a href="#" class="navbar-brand">
+    <a href="index.php" class="navbar-brand">
       <img class="d-inline-block align-top" id="logo-header" src="https://w7.pngwing.com/pngs/673/236/png-transparent-telegram-app-logo-icon-application-symbol-message-messaging-app-technology-social-media.png"
       width="60" height="60" alt="Logo de la aplicación">
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active">
-          <a href="#" class="nav-link active text-white" id="nombre-pag-header">
+          <a href="index.php" class="nav-link active text-white" id="nombre-pag-header">
             <h1> Mensajería </h1>
           </a>
         </li>
@@ -53,7 +53,7 @@
           <div class="card-body">
             <h5 class="card-title">Contactos</h5>
             <p class="card-text">Aquí puedes buscar y agregar contactos para empezar a hablar con ellos.</p>
-            <a href="#" class="btn btn-primary">Ver contactos</a>
+            <a href="ver_contactos.php" class="btn btn-primary">Ver contactos</a>
           </div>
         </div>
       </div>
