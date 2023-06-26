@@ -50,16 +50,20 @@
             $query->execute();
             $id_user = $query->fetch()[0];
 
-            $sql = "SELECT id_contacto2 FROM chats WHERE id_contacto1 = :id_user";
+            //$sql = "SELECT id_contacto2 FROM chats WHERE id_contacto1 = :id_user";
+            $sql = "SELECT id_contacto1, id_contacto2 FROM chats WHERE id_contacto1 = :id_user OR id_contacto2 = :id_user";
             $query = $base->prepare($sql);
             $query->bindValue(":id_user", $id_user);
             $query->execute();
             $resultados = $query->fetchAll();
-            var_dump($resultados);
 
             if (!empty($resultados)) {
               foreach ($resultados as $resultado) {
-                $id_contacto = $resultado['id_contacto2'];
+                $id_contacto1 = $resultado['id_contacto1'];
+                $id_contacto2 = $resultado['id_contacto2'];
+
+                // Obtener el ID del contacto
+                $id_contacto = ($id_contacto1 == $id_user) ? $id_contacto2 : $id_contacto1;
 
                 // Obtener el nombre del contacto utilizando su ID
                 $sql = "SELECT username FROM usuarios WHERE id = :id_contacto";
@@ -70,14 +74,15 @@
 
                 echo '<div class="contacto">';
                 echo $nombre_contacto;
-                echo '<form action="eliminar_contacto.php" method="GET">';
-                echo '<input type="hidden" name="id" value="'.$id_contacto.'">';
-                echo '<button type="submit">Eliminar</button>';
+                echo '<form action="mostrar_chat.php" method="GET">';
+                echo '<input type="hidden" name="id_contacto" value="'.$id_contacto.'">';
+                echo '<input type="hidden" name="id_user" value="'.$id_user.'">';
+                echo '<button type="submit">Mostrar chat</button>';
                 echo '</form>';
                 echo '</div>';
               }
             } else {
-              echo "No tienes contactos:(";
+              echo "No tienes chats:(";
             }
             ?>
           </div>
@@ -85,7 +90,7 @@
         <div class="text-center">
             <form action="agregar_contacto.php" method="POST">
                 <input type="text" name="contacto" class="form-control mt-5" placeholder="Nombre del contacto" required autofocus>
-                <button type="submit" class="btn btn-primary mt-3">Agregar contacto</button>
+                <button type="submit" class="btn btn-primary mt-3">Crear nuevo chat con</button>
                 <a href="index.php" class="text-decoration-none link-light">
                 <button type="button" class="btn btn-primary mt-3">Atrás</button>
             </a>
