@@ -44,7 +44,7 @@
           <div class="card-body">
             <h5 class="card-title">Conversaciones</h5>
             <p class="card-text">Aquí puedes ver tus conversaciones activas y acceder a ellas.</p>
-            <a href="#" class="btn btn-primary">Ver conversaciones</a>
+            <a href="conversaciones.php" class="btn btn-primary">Ver conversaciones</a>
           </div>
         </div>
       </div>

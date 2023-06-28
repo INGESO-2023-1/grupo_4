@@ -1,0 +1,38 @@
+#container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+footer{
+  padding: 20px;
+  margin-top: 20px;
+  color: white;
+  background-color: #1293d4;
+  text-align: center;
+}
+
+.contacto {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Ajusta el valor según el espacio deseado entre los contactos */
+}
+
+.contacto button {
+  margin-left: 10px;
+}
+
+.mensaje {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f1f1f1;
+  }
+
+.sender-1 {
+    background-color: lightblue;
+}
+
+.sender-2 {
+    background-color: lightgreen;
+}

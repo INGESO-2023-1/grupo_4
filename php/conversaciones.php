@@ -41,7 +41,6 @@
       <div class="col-sm">
         <div class="card mb">
           <div class="card-body">
-            <p class="card-text">En orden alfabético:</p>
             <?php
             include_once "conexion_bd.php";
             $sql = "SELECT id FROM usuarios WHERE username = :username";
@@ -88,8 +87,8 @@
           </div>
         </div>
         <div class="text-center">
-            <form action="agregar_contacto.php" method="POST">
-                <input type="text" name="contacto" class="form-control mt-5" placeholder="Nombre del contacto" required autofocus>
+          <form action= <?php echo 'iniciar_chat.php?id_user=' . $id_user ?>  method="POST">
+                <input type="text" name="username_contacto" class="form-control mt-5" placeholder="Nombre del contacto" required autofocus>
                 <button type="submit" class="btn btn-primary mt-3">Crear nuevo chat con</button>
                 <a href="index.php" class="text-decoration-none link-light">
                 <button type="button" class="btn btn-primary mt-3">Atrás</button>

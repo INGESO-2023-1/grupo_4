@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2023 a las 04:40:40
+-- Tiempo de generación: 28-06-2023 a las 05:24:21
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,73 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `proyecto_ingesoft`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `chats`
+--
+
+CREATE TABLE `chats` (
+  `id_contacto1` int(11) NOT NULL,
+  `id_contacto2` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `chats`
+--
+
+INSERT INTO `chats` (`id_contacto1`, `id_contacto2`) VALUES
+(11, 12),
+(14, 11),
+(11, 16);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contactos`
+--
+
+CREATE TABLE `contactos` (
+  `id_user` int(11) NOT NULL,
+  `id_contacto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `contactos`
+--
+
+INSERT INTO `contactos` (`id_user`, `id_contacto`) VALUES
+(11, 12),
+(11, 14),
+(11, 15),
+(16, 15),
+(16, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mensajes`
+--
+
+CREATE TABLE `mensajes` (
+  `id` int(11) NOT NULL,
+  `id_sender` int(11) NOT NULL,
+  `id_receiver` int(11) NOT NULL,
+  `mensaje` text COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `mensajes`
+--
+
+INSERT INTO `mensajes` (`id`, `id_sender`, `id_receiver`, `mensaje`) VALUES
+(1, 14, 11, 'holaaa'),
+(2, 14, 11, 'cómo estáss??'),
+(3, 11, 14, 'hola muy bien y tú?'),
+(4, 11, 14, 'gracias por escribirme:)'),
+(5, 11, 16, 'hola ryo!!'),
+(6, 11, 16, 'cómo estás?');
 
 -- --------------------------------------------------------
 
@@ -52,6 +119,12 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `telefono`, `correo`, `img
 --
 
 --
+-- Indices de la tabla `mensajes`
+--
+ALTER TABLE `mensajes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -61,6 +134,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `mensajes`
+--
+ALTER TABLE `mensajes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
