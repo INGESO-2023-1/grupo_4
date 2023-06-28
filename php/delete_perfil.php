@@ -6,16 +6,16 @@ if(!isset($_SESSION["usuario"])){
 }
 
 try{
-    $sql = "DELETE FROM usuarios WHERE username = :username";
-    $query = $base->prepare($sql);
-    $query->bindValue(":username", $_SESSION["usuario"]);
-    $query->execute();
-
     $sql = "SELECT id FROM usuarios WHERE username = :username";
     $query = $base->prepare($sql);
     $query->bindValue(":username", $_SESSION["usuario"]);
     $query->execute();
     $id_user = $query->fetch()[0];
+
+    $sql = "DELETE FROM usuarios WHERE username = :username";
+    $query = $base->prepare($sql);
+    $query->bindValue(":username", $_SESSION["usuario"]);
+    $query->execute();
 
     $sql = "DELETE FROM chats WHERE id_contacto1 = :id OR id_contacto2 = :id";
     $query = $base->prepare($sql);
