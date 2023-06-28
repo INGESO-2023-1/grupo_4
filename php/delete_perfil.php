@@ -17,7 +17,7 @@ try{
     $query->execute();
     $id_user = $query->fetch()[0];
 
-    $sql = "DELETE FROM nombre_tabla WHERE id_contacto1 = :id OR id_contacto2 = :id";
+    $sql = "DELETE FROM chats WHERE id_contacto1 = :id OR id_contacto2 = :id";
     $query = $base->prepare($sql);
     $query->bindValue(":id", $id_user);
     $query->execute();
