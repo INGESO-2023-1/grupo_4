@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-06-2023 a las 05:24:21
+-- Tiempo de generación: 28-06-2023 a las 06:14:11
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -86,7 +86,14 @@ INSERT INTO `mensajes` (`id`, `id_sender`, `id_receiver`, `mensaje`) VALUES
 (3, 11, 14, 'hola muy bien y tú?'),
 (4, 11, 14, 'gracias por escribirme:)'),
 (5, 11, 16, 'hola ryo!!'),
-(6, 11, 16, 'cómo estás?');
+(6, 11, 16, 'cómo estás?'),
+(7, 17, 11, 'holaaaa'),
+(8, 11, 17, 'hola k tal'),
+(9, 18, 11, 'aaaaaaaaaaaaa'),
+(10, 19, 11, 'a'),
+(11, 20, 11, 'a'),
+(12, 21, 11, 'a'),
+(13, 22, 11, 'a');
 
 -- --------------------------------------------------------
 
@@ -139,13 +146,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
